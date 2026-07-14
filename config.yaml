@@ -1,0 +1,17 @@
+data:
+  class_path: anomalib.data.Folder
+  init_args:
+    name: spacecraft_metal
+    root: .
+    normal_dir: train/normal
+    test_split_mode: synthetic   # <-- THIS IS THE MAGIC LINE!
+    train_batch_size: 32
+    eval_batch_size: 32
+    num_workers: 0
+
+model:
+  class_path: anomalib.models.Padim
+
+trainer:
+  max_epochs: 1
+  accelerator: auto
